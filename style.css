@@ -1,0 +1,571 @@
+/* style.css */
+html, body {
+    overflow-x: hidden; /* Prevents the 'blue line' or side scrolling */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --primary: #00629b; /* IEEE Blue */
+    --dark-navy: #002855; /* Deep Professional Navy */
+    --accent: #00b5e2; /* Light Blue Accent */
+    --text: #333;
+    --light-bg: #f8f9fa; /* Soft Gray for alternating sections */
+    --white: #ffffff;
+}
+
+body {
+    padding-top: 69px; 
+    
+    /* Keep your existing body styles below */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    overflow-x: hidden;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    color: var(--text);
+    background-color: var(--white);
+    line-height: 1.6;
+}
+/* Navigation Bar Base */
+nav {
+    background: var(--dark-navy);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    
+    /* THE FIX: Fixed positioning */
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%; /* Ensures it covers the full width */
+    box-sizing: border-box; /* Prevents padding from adding to the width */
+    
+    z-index: 2000; /* High z-index to stay above all other content */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.logo {
+    color: white;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+/* Laptop View (Desktop) */
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li { margin-left: 25px; }
+nav ul li a.active-nav {
+    color: var(--accent) !important; /* Changes color to your electric blue accent */
+    font-weight: 800; /* Makes it extra bold */
+    border-bottom: 2px solid var(--accent); /* Adds a professional underline */
+    padding-bottom: 5px;
+}
+nav ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s;
+}
+nav ul li a:hover {
+    color: var(--white);
+    opacity: 1;
+}
+
+.menu-toggle { display: none; }
+
+/* Mobile View (Drawer Design) */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        color: white;
+        font-size: 1.8rem;
+        cursor: pointer;
+        z-index: 1002;
+    }
+
+    nav ul {
+        position: fixed;
+        top: 0;
+        right: -300px; /* Hidden off-screen */
+        width: 260px;
+        height: 100vh;
+        background: var(--dark-navy);
+        flex-direction: column;
+        padding: 80px 20px;
+        transition: right 0.4s ease;
+        z-index: 1001;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+    }
+
+    nav ul.active { right: 0; } /* Slide in effect */
+
+    nav ul li {
+        margin: 20px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    #menu-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 999;
+    }
+}   
+/* --- HERO SECTION --- */
+.hero {
+    height: 60vh;
+    /* Professional Gradient Overlay */
+    background: linear-gradient(rgba(0, 40, 85, 0.85), rgba(0, 98, 155, 0.7)), 
+                url('https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?q=80&w=1170&auto=format&fit=crop');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white; /* Text color inside Hero */
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
+
+/* --- TICKER (Endless Animation) --- */
+.ticker-wrap {
+    width: 100%;
+    overflow: hidden;
+    background: var(--primary);
+    color: white;
+    padding: 10px 0;
+    border-bottom: 3px solid var(--accent);
+}
+
+.ticker {
+    display: inline-block;
+    white-space: nowrap;
+    animation: marquee 35s linear infinite; /* Slightly slower for better reading */
+    font-weight: 500;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+/* --- CONTENT BOXES & LAYOUT --- */
+.content {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 25px;
+}
+
+/* A new class for sections that need a gray background */
+.gray-section {
+    background-color: var(--light-bg);
+    padding: 60px 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+h2 {
+    color: var(--dark-navy);
+    border-left: 6px solid var(--primary); /* Shifted from bottom to side for modern look */
+    padding-left: 15px;
+    margin-top: 40px;
+    font-size: 1.8rem;
+}
+
+/* Design for info cards (Use these in your HTML) */
+.info-card {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    border-top: 5px solid var(--primary); /* Important IEEE Blue Accent */
+    box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+    transition: 0.3s ease-in-out;
+    margin: 20px 0;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.1);
+}
+/* Enhanced Footer Styles */
+footer {
+    background: #002147; /* Professional Oxford Blue */
+    color: #ffffff;
+    padding: 60px 0 20px 0;
+    margin-top: 80px;
+    font-size: 0.9rem;
+    border-top: 4px solid #00629b; /* IEEE Blue accent line */
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    /* Creates 3 equal columns */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.footer-section h3 {
+    color: #00b5e2; /* Bright accent for headings */
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.footer-section p {
+    line-height: 1.8;
+    color: #d1d1d1;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 12px;
+}
+
+.footer-section a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.3s ease;
+    display: inline-block;
+}
+
+.footer-section a:hover {
+    color: #00b5e2;
+    transform: translateX(5px); /* Subtle slide effect on hover */
+}
+
+/* Social Link Boxes */
+.social-links {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.social-links a {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.social-links a:hover {
+    background: #00629b;
+    border-color: #00b5e2;
+}
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 50px;
+    padding-top: 25px;
+    color: #aaaaaa;
+    font-size: 0.8rem;
+}/* --- 1. GENERAL MENU TOGGLE STYLE --- */
+.menu-toggle {
+    display: none; 
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1002; /* Ensures button stays on top of the drawer */
+}
+
+/* --- 2. PROFESSIONAL MOBILE DRAWER (Right-Side Box) --- */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        justify-content: space-between;
+        padding: 10px 5%;
+    }
+
+    /* THE VERTICAL DRAWER BOX */
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        
+        /* Positioning logic for Right-Side Box */
+       position: fixed;
+        top: 0;
+        right: -300px; /* Increased from -280px to ensure it is fully hidden */
+        width: 260px;
+        height: 100vh;
+        transition: right 0.4s ease-in-out;
+        
+        /* Professional Navy Theme */
+        background: var(--dark-navy);
+        padding: 80px 20px 20px 20px; /* Top padding to avoid covering toggle */
+        box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+        z-index: 1001;
+        
+        /* Smooth Slide Animation */
+        transition: right 0.4s ease-in-out;
+    }
+
+    /* THE 'ACTIVE' STATE (Toggled via JS) */
+    nav ul.active {
+        right: 0; /* Slides into view from the right */
+       
+    }
+
+    nav ul li {
+        margin: 15px 0;
+        text-align: left;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 10px;
+    }
+
+    /* --- General Layout Fixes for Mobile --- */
+    .hero { height: 50vh; padding: 20px; }
+    .hero h1 { font-size: 1.8rem; }
+    .info-grid, .committee-grid { grid-template-columns: 1fr; }
+    .venue-section { flex-direction: column; }
+    .footer-container { grid-template-columns: 1fr; text-align: center; }
+    
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+/* --- 3. LAPTOP VIEW FIX --- */
+@media (min-width: 769px) {
+    nav ul {
+        display: flex !important;
+        flex-direction: row;
+        position: static;
+        width: auto;
+        height: auto;
+        background: none;
+        box-shadow: none;
+        padding: 0;
+        right: auto; /* Resets the right-side positioning */
+    }
+}
+/* Page Title and Intro */
+.page-title {
+    color: var(--dark-navy);
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.intro-text {
+    text-align: center;
+    color: #666;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Tracks Grid System */
+.tracks-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+/* Individual Track Card Design */
+.track-card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid #eef2f6;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.track-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
+    box-shadow: 0 15px 45px rgba(0, 98, 155, 0.1);
+}
+
+.track-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: rgba(0, 98, 155, 0.05); /* Very light watermark color */
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    z-index: 1;
+}
+
+.track-card h3 {
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    position: relative;
+    z-index: 2;
+}
+
+.track-card p {
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.5;
+    position: relative;
+    z-index: 2;
+}
+
+/* Highlight Box at bottom */
+.info-highlight {
+    background: linear-gradient(90deg, var(--dark-navy), var(--primary));
+    color: white;
+    padding: 25px;
+    border-radius: 8px;
+    margin-top: 50px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+/* Timeline Container */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px 0;
+}
+
+/* Vertical Line */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background-color: #eef2f6;
+    top: 0;
+    bottom: 0;
+    left: 20px;
+    margin-left: -1.5px;
+}
+
+/* Individual Timeline Item */
+.timeline-item {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+/* Timeline Dot */
+.timeline-dot {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    left: 12px;
+    background-color: var(--white);
+    border: 3px solid var(--primary);
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Date Label */
+.timeline-date {
+    font-weight: bold;
+    color: var(--primary);
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+/* Content Box */
+.timeline-content {
+    padding: 20px;
+    background-color: #fff;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid #f0f0f0;
+}
+
+.timeline-content h3 {
+    margin: 0 0 10px 0;
+    color: var(--dark-navy);
+    font-size: 1.2rem;
+}
+
+.timeline-content p {
+    margin: 0;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+/* Special Highlighting for the Event Dates */
+.active-event .timeline-content {
+    background: linear-gradient(135deg, #ffffff 0%, #f0f7ff 100%);
+    border-left: 5px solid var(--primary);
+}
+
+.active-event .timeline-dot {
+    background-color: var(--primary);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+    .timeline::after { left: 15px; }
+    .timeline-dot { left: 7px; }
+    .timeline-item { padding: 10px 30px; }
+}
+/* Past events become subtle and gray */
+.past-event .timeline-content {
+    opacity: 0.6;
+    background-color: #f9f9f9;
+    border-left: 5px solid #ccc;
+}
+
+.past-event .timeline-dot {
+    background-color: #ccc;
+    border-color: #ddd;
+}
+
+/* Current/Next event glows blue */
+.active-event .timeline-content {
+    opacity: 1;
+    background: #fff;
+    border-left: 5px solid var(--primary);
+    box-shadow: 0 10px 25px rgba(0, 98, 155, 0.15);
+    transform: scale(1.02); /* Slight pop-out effect */
+}
+
+.active-event .timeline-dot {
+    background-color: var(--primary);
+    box-shadow: 0 0 10px var(--primary); /* Glowing effect */
+}

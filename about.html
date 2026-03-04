@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About | ICSVCE 2021</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Extra styles specific to About page design */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        .info-box {
+            padding: 30px;
+            background: #fdfdfd;
+            border-top: 4px solid var(--primary);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-radius: 4px;
+        }
+        .highlight-bar {
+            background: #f0f7ff;
+            border-left: 6px solid var(--primary);
+            padding: 20px;
+            margin: 30px 0;
+            font-style: italic;
+        }
+        .venue-section {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+        .venue-text { flex: 1; min-width: 300px; }
+        .venue-image { flex: 1; min-width: 300px; border-radius: 8px; overflow: hidden; }
+    </style>
+</head>
+<body>
+     <nav>
+    <div class="logo">ICSVCE 2021</div>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    
+    <ul id="nav-links">
+        <li><a href="index.html">Home</a></li>
+<li><a href="about.html" class="active-nav">About</a></li>        <li><a href="tracks.html">Tracks</a></li>
+        <li><a href="dates.html">Dates</a></li>
+        <li><a href="https://www.townscript.com/e/..." target="_blank" class="reg-link">Registration</a></li>
+    </ul>
+</nav>
+
+    <div class="content">
+        <h1 style="color: var(--primary);">About the Conference</h1>
+        <p>The ICSVCE 2021: International Conference on Advances in Signal Processing, VLSI, Communications and Embedded Systems aims to bring together leading academic scientists, researchers and research scholars to exchange and share their experiences and research results.</p>
+        
+        <div class="highlight-bar">
+            Due to rapidly changing COVID situations globally, ICSVCE 2021 will take place <strong>online</strong> to ensure the safety of all participants.
+        </div>
+
+        <div class="info-grid">
+            <div class="info-box">
+                <h3>Our Mission</h3>
+                <p>To provide a premier interdisciplinary platform for researchers, practitioners, and educators to present and discuss the most recent innovations, trends, and concerns.</p>
+            </div>
+            <div class="info-box">
+                <h3>Our Scope</h3>
+                <p>Covering practical challenges encountered and solutions adopted in the fields of Signal Processing, VLSI, Communications, and Embedded Systems.</p>
+            </div>
+        </div>
+
+        <h2>Organizing Institution</h2>
+        <div class="venue-section">
+            <div class="venue-text">
+                <h3>Vardhaman College of Engineering</h3>
+                <p>Established in 1999, Vardhaman College of Engineering is affiliated to JNTU, Hyderabad, and approved by AICTE, New Delhi.</p>
+                <p>The campus is located near the Bangalore Highway (NH-7), just a 30-minute drive from the Hyderabad International Airport at Shamshabad.</p>
+            </div>
+            <div class="venue-image">
+                
+            </div>
+        </div>
+
+        <div class="info-box" style="margin-top: 40px; background: var(--primary); color: white;">
+            <h3 style="color: white;">Publication & Indexing</h3>
+            <p>All accepted and presented papers are expected to be published in <strong>Springer Conference Proceedings</strong> (Approval Pending). The papers will also be submitted for indexing in <strong>Scopus</strong>.</p>
+        </div>
+    </div>
+
+    <footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>ICSVCE 2021</h3>
+            <p>
+                <strong>Vardhaman College of Engineering</strong><br>
+                Department of Electronics and Communication Engineering<br>
+                Hyderabad, India.
+            </p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Regulations</h3>
+            <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">IEEE Code of Ethics</a></li>
+                <li><a href="#">Plagiarism Policy</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>External Links</h3>
+            <div class="social-links">
+                <a href="https://twitter.com/IEEEorg" target="_blank">Twitter</a>
+                <a href="https://www.instagram.com/ieeeorg" target="_blank">Instagram</a>
+                <a href="https://www.ieee.org" target="_blank">Official IEEE</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        &copy; 2021 ICSVCE | Advancing Technology for Humanity
+    </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>

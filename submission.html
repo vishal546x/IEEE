@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submission | ICAIVSC 2026</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Extra styles specific to the page design */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 40px 0;
+        }
+        .info-box {
+            padding: 30px;
+            background: #fdfdfd;
+            border-top: 4px solid var(--primary, #0056b3); /* Fallback color added in case var is missing */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-radius: 4px;
+            margin-bottom: 25px;
+        }
+        .info-box ul {
+            padding-left: 20px;
+        }
+        .info-box li {
+            text-align: justify;
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+        .highlight-bar {
+            background: #f0f7ff;
+            border-left: 6px solid var(--primary, #0056b3);
+            padding: 20px;
+            margin: 30px 0;
+            font-style: italic;
+        }
+        .link-button {
+            display: inline-block;
+            background: #fff;
+            color: var(--primary, #0056b3);
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-top: 10px;
+            margin-right: 15px;
+        }
+        .link-button:hover {
+            background: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">ICAIVSC 2026</div>
+        <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+        
+        <ul id="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="tracks.html">Tracks</a></li>
+            <li><a href="dates.html">Dates</a></li>
+            <li><a href="submission.html" class="active-nav">Submission</a></li>
+            <li><a href="https://www.townscript.com/e/..." target="_blank" class="reg-link">Registration</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        <h1 style="color: var(--primary, #0056b3);">Paper Submission</h1>
+        
+        <h3 style="margin-top: 30px;">Information and Guidelines for Authors:</h3>
+        <p style="text-align: justify;">Prospective authors are invited to submit original and unpublished research papers by the deadline, for publication in the conference proceedings and for oral presentation during the conference. All submissions should be written in English with a maximum paper length of seven (8 to 12) printed pages including (figures, tables and references).</p>
+        
+        <div class="highlight-bar">
+            Two maximum additional pages are allowed on payment basis of Rs.700/- per page.
+        </div>
+
+        <div class="info-box">
+            <h3>Initial Submission and Evaluation:</h3>
+            <ul>
+                <li>The manuscripts for initial submission should be submitted in a single .Doc or .PDF format file.</li>
+                <li>Authors are instructed not to include name and affiliation details in the paper as conference follows double blind review process.</li>
+                <li>All papers will be assigned a paper ID. You will receive this ID after you have completed the paper submission process. Authors are then required to use the paper ID assigned to them for all future correspondence regarding this paper.</li>
+                <li>The manuscripts initially will be checked for PLAGIARISM followed by double blind review process.</li>
+                <li>All papers that confirm to submission guidelines will be peer-reviewed by at least two independent referees from the Conference Review Board and evaluated based on originality, technical and/or research content/depth, correctness, relevance to conference, contributions, and readability.</li>
+                <li><strong>IMPORTANT NOTE:</strong> Authors must obtain permissions from the previous publisher(s) for any material (text, figures, tables etc.) they want to reuse, and submit the same with paper.</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h3>Acceptance of papers:</h3>
+            <ul>
+                <li>Based on the decisions given by our reviewers the decision of paper acceptance/rejection will be communicated to authors through email.</li>
+                <li>The authors of the accepted papers will be allowed to make corrections in accordance with the suggestions of the reviewers and submit final camera-ready papers within the stipulated deadline.</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h3>Final Submission of papers:</h3>
+            <p style="text-align: justify; margin-bottom: 15px;">Each accepted final paper must be accompanied by the duly filled in copyright form called Consent to Publish (CTP), which we ask a corresponding author to complete and sign. The final submission should be prepared as a separate zipped file as mentioned below.</p>
+            <p style="text-align: justify; margin-bottom: 15px;">All final submissions should be in a .zip compressed archive including:</p>
+            <ul>
+                <li>The source (input) files, i.e. TeX source files for the text and figure files (300 dpi resolution),</li>
+                <li>Any style files, templates, and special fonts the authors may have used,</li>
+                <li>MS Word file in the case of using MS Word,</li>
+                <li>The final Postscript (.ps) or Adobe Acrobat (.pdf) file,</li>
+                <li>The dully filled and signed copyright form.</li>
+            </ul>
+        </div>
+
+        <div class="info-box">
+            <h3>Policy on Plagiarism</h3>
+            <ul>
+                <li>Authors are requested to kindly refrain from plagiarism in any form. Authors should submit their original and unpublished research work not under consideration for publication elsewhere.</li>
+                <li>Papers found to be plagiarized during any stage of review shall be rejected.</li>
+                <li>As per copyright transfer agreement, Authors are deemed to be individually and collectively responsible for the content of manuscripts published by them.</li>
+                <li>Hence, it is the responsibility of each author to strive for the highest ethical standards with respect to plagiarism.</li>
+                <li>All papers published in these proceedings have been peer reviewed through processes administered by the Editors.</li>
+            </ul>
+        </div>
+
+        <div class="info-box" style="margin-top: 40px; background: var(--primary, #0056b3); color: white;">
+            <h3 style="color: white; margin-bottom: 20px;">Important Links</h3>
+            <a href="https://cmt3.research.microsoft.com/User/Login?ReturnUrl=%2FICMLSC2020" target="_blank" class="link-button">Submit Your Paper Here</a>
+            <a href="https://publishingsupport.iopscience.iop.org/author-guidelines-for-conference-proceedings/" target="_blank" class="link-button">View Author Guidelines</a>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>ICAIVSC 2026</h3>
+                <p>
+                    <strong>R.M.K. Engineering College</strong><br>
+                    Department of ECA and EEV<br>
+                    RSM Nagar, Kavaraipettai, Gummidipoondi Taluk,<br>
+                    Tiruvallur District, Tamil Nadu, 601 206, India
+                </p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            &copy; 2026 ICAIVSC | All rights reserved
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
